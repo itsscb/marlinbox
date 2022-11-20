@@ -1,0 +1,28 @@
+{ 
+"devicename":"Sycreader RFID Technology Co., Ltd SYC ID&IC USB Reader", 
+"volume": 1.0,   
+"playlist": [
+        {
+            "id": "0002693373",
+            "file": "./music/ACDC - Back In Black.mp3"
+        },
+        {
+            "id": "0011415256",
+            "file": "./music/ACDC - TNT.mp3"
+        },
+        {
+            "id": "0011394336",
+            "file": "./music/ACDC - Thunderstruck.mp3"
+        }
+    ],
+"controlcards": [
+        {
+            "id": "0011462127",
+            "function": "vol+"
+        },
+        {
+            "id": "0011394129",
+            "function": "vol-"
+        }
+    ]
+}
