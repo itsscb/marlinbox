@@ -1,4 +1,4 @@
-module marlinbox
+module github.com/itsscb/marlinbox
 
 go 1.18
 

@@ -3,7 +3,7 @@ package main
 import (
 	"time"
 
-	marlinbox "github.com/itsscb/marlin-box"
+	marlinbox "github.com/itsscb/marlinbox"
 )
 
 func main() {
