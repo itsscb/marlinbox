@@ -3,25 +3,25 @@
 "volume": 1.0,   
 "playlist": [
         {
-            "id": "0002693373",
-            "file": "./music/ACDC - Back In Black.mp3"
+            "id": "0004106397",
+            "file": "./music/Badewannensitzpirat.mp3"
         },
         {
-            "id": "0011415256",
-            "file": "./music/ACDC - TNT.mp3"
+            "id": "0017411992",
+            "file": "./music/Leo_Lausemaus_Titelsong.mp3"
         },
         {
-            "id": "0011394336",
-            "file": "./music/ACDC - Thunderstruck.mp3"
+            "id": "0017356608",
+            "file": "./music/Party_im_Schneckenhaus.mp3"
         }
     ],
 "controlcards": [
         {
-            "id": "0011462127",
+            "id": "0017458863",
             "function": "vol+"
         },
         {
-            "id": "0011394129",
+            "id": "0017356401",
             "function": "vol-"
         }
     ]

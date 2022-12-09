@@ -2,7 +2,6 @@ package marlinbox
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"log"
 	"os"
@@ -14,16 +13,17 @@ import (
 )
 
 type MarlinBox struct {
-	DeviceName      string `json:"devicename"`
-	DevicePath      string `json:"devicepath,omitempty"`
-	CurrentID       string
-	Volume          float64        `json:"volume,omitempty"`
-	Playlist        []*PlayCard    `json:"playlist,omitempty"`
-	ControlCards    []*ControlCard `json:"controlcards,omitempty"`
-	Device          *evdev.InputDevice
-	CurrentPlayCard *PlayCard
-	Player          oto.Player
-	PlayerContext   *oto.Context
+	DeviceName      string             `json:"devicename"`
+	DevicePath      string             `json:"devicepath,omitempty"`
+	ConfigPath      string             `json:"configpath,omitempty"`
+	CurrentID       string             `json:"-"`
+	Volume          float64            `json:"-"`
+	Playlist        []*PlayCard        `json:"playlist,omitempty"`
+	ControlCards    []*ControlCard     `json:"controlcards,omitempty"`
+	Device          *evdev.InputDevice `json:"-"`
+	CurrentPlayCard *PlayCard          `json:"-"`
+	Player          oto.Player         `json:"-"`
+	PlayerContext   *oto.Context       `json:"-"`
 }
 
 type RFIDCard struct {
@@ -75,6 +75,9 @@ func New(path string) *MarlinBox {
 	}
 
 	devices, err := evdev.ListInputDevices()
+	if err != nil {
+		log.Panicf("Error listing Input Devices: %s", err)
+	}
 
 	for _, dev := range devices {
 		if dev.Name == mb.DeviceName {
@@ -85,6 +88,8 @@ func New(path string) *MarlinBox {
 	if mb.DevicePath == "" {
 		panic("Device not found")
 	}
+
+	mb.ConfigPath = path
 
 	return mb
 }
@@ -97,45 +102,37 @@ func (mb *MarlinBox) Run() {
 	}
 	mb.Device.Grab()
 
-	go func() {
-		for {
-			events, err := mb.Device.Read()
-			if err != nil {
-				log.Println(err)
-			}
-
-			for _, ev := range events {
-				if ev.Value != 0x1 {
-					continue
-				}
-				val, ok := KeyMap[ev.Code]
-				if !ok {
-					continue
-				}
-
-				if val == "ENTER" {
-					err := mb.GetCurrentCard()
-					if err != nil {
-						log.Println(err)
-					}
-					fmt.Println(mb.CurrentPlayCard)
-					mb.CurrentID = ""
-					// err =
-					// if err != nil {
-					// 	log.Println(err)
-					// 	panic(err)
-					// }
-					continue
-				}
-
-				mb.CurrentID += val
-			}
+	//	go func() {
+	for {
+		events, err := mb.Device.Read()
+		if err != nil {
+			log.Println(err)
 		}
-	}()
+
+		for _, ev := range events {
+			if ev.Value != 0x1 {
+				continue
+			}
+			val, ok := KeyMap[ev.Code]
+			if !ok {
+				continue
+			}
+
+			if val == "ENTER" || len(mb.CurrentID) == 9 {
+				if val != "ENTER" {
+					mb.CurrentID += val
+				}
+				mb.GetCurrentCard()
+				mb.CurrentID = ""
+				continue
+			}
+
+			mb.CurrentID += val
+		}
+	}
 }
 
-func (mb *MarlinBox) GetCurrentCard() error {
-	fmt.Println(mb.ControlCards)
+func (mb *MarlinBox) GetCurrentCard() {
 	for _, c := range mb.ControlCards {
 		if mb.CurrentID == c.ID {
 			switch c.Function {
@@ -146,13 +143,12 @@ func (mb *MarlinBox) GetCurrentCard() error {
 				}
 			case "vol-":
 				fmt.Println("vol-")
-				if mb.Volume > 0 {
+				if mb.Volume >= 0.2 {
 					mb.Volume = mb.Volume - 0.2
 				}
 			default:
-				return nil
+				return
 			}
-			return nil
 		}
 	}
 	for _, c := range mb.Playlist {
@@ -162,10 +158,29 @@ func (mb *MarlinBox) GetCurrentCard() error {
 				mb.Player.Reset()
 			}
 			mb.Play()
-			return nil
+			return
 		}
 	}
-	return errors.New("Card not found: " + mb.CurrentID)
+	mb.Playlist = append(mb.Playlist, &PlayCard{
+		RFIDCard: RFIDCard{
+			ID: mb.CurrentID,
+		},
+	})
+
+	config, err := json.MarshalIndent(&mb, "", " ")
+	if err != nil {
+		log.Printf("\nCould not marshal output '%+v': %s", config, err)
+	}
+
+	jsonFile, err := os.Create(mb.ConfigPath)
+	if err != nil {
+		log.Printf("\nCould not create json-File '%s': %s", mb.ConfigPath, err)
+	}
+
+	_, err = jsonFile.Write(config)
+	if err != nil {
+		log.Printf("\nCould not write json-File '%s': %s", mb.ConfigPath, err)
+	}
 }
 
 func (mb *MarlinBox) Play() {

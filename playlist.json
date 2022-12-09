@@ -1,0 +1,65 @@
+{
+ "devicename": "Sycreader RFID Technology Co., Ltd SYC ID\u0026IC USB Reader",
+ "devicepath": "/dev/input/event1",
+ "configpath": "playlist.json",
+ "playlist": [
+  {
+   "id": "0004106397",
+   "file": "./music/01-01-Traditional-Der_Mond_ist_aufgegangen-320.mp3"
+  },
+  {
+   "id": "0017411992",
+   "file": "./music/01-02-Heino_Gaze-La-Le-Lu-320.mp3"
+  },
+  {
+   "id": "0017356608",
+   "file": "./music/01-01-Chris_Buseck-Party_im_Schneckenhaus-320.mp3"
+},
+{
+    "id": "0004148198",
+    "file": "./music/01-01-Heiko_Russe-Leo_Lausemaus_Titelsong-320.mp3"
+},
+{
+    "id": "0008323849",
+    "file": "./music/01-05-Markus_Schurjann-Ich_bin_ein_Einhorn-320.mp3"
+  },
+  {
+   "id": "0004152218",
+   "file": "./music/01-06-Traditional-Die_Rader_vom_Bus-320.mp3"
+  },
+  {
+   "id": "0012528320",
+   "file": "./music/01-06-Traditional-Schlaf_Kindlein_schlaf-320.mp3"
+  },
+  {
+   "id": "0008324420",
+   "file": "./music/01-07-Georges_Moustaki-Das_rote_Pferd-320.mp3"
+  },
+  {
+   "id": "0008324422",
+   "file": "./music/01-09-Markus_Schurjann-Wer_hat_den_Keks_aus_der_Dose_geklaut-320.mp3"
+  },
+  {
+   "id": "0008324475",
+   "file": "./music/01-10-Traditional-Funf_kleine_Fische-320.mp3"
+  },
+  {
+   "id": "0005409503",
+   "file": "./music/01-11-Traditional-Old_Mac_Donald_Had_a_Farm-320.mp3"
+  },
+  {
+   "id": "0004148375",
+   "file": "./music/01-14-Traditional-Meine_Oma_fahrt_im_Huhnerstall_Motorrad-320.mp3"
+  }
+ ],
+ "controlcards": [
+  {
+   "id": "0017458863",
+   "function": "vol+"
+  },
+  {
+   "id": "0017356401",
+   "function": "vol-"
+  }
+ ]
+}
