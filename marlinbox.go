@@ -2,7 +2,6 @@ package marlinbox
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"os"
 	"time"
@@ -18,6 +17,7 @@ type MarlinBox struct {
 	ConfigPath      string             `json:"configpath,omitempty"`
 	CurrentID       string             `json:"-"`
 	Volume          float64            `json:"-"`
+	NextSong        bool               `json:"-"`
 	Playlist        []*PlayCard        `json:"playlist,omitempty"`
 	ControlCards    []*ControlCard     `json:"controlcards,omitempty"`
 	Device          *evdev.InputDevice `json:"-"`
@@ -32,7 +32,7 @@ type RFIDCard struct {
 
 type PlayCard struct {
 	RFIDCard
-	File string `json:"file,omitempty"`
+	File []string `json:"file"`
 }
 type ControlCard struct {
 	RFIDCard
@@ -102,7 +102,6 @@ func (mb *MarlinBox) Run() {
 	}
 	mb.Device.Grab()
 
-	//	go func() {
 	for {
 		events, err := mb.Device.Read()
 		if err != nil {
@@ -137,15 +136,21 @@ func (mb *MarlinBox) GetCurrentCard() {
 		if mb.CurrentID == c.ID {
 			switch c.Function {
 			case "vol+":
-				fmt.Println("vol+")
 				if mb.Volume < 1.0 {
 					mb.Volume = mb.Volume + 0.2
+					return
 				}
 			case "vol-":
-				fmt.Println("vol-")
 				if mb.Volume >= 0.2 {
 					mb.Volume = mb.Volume - 0.2
+					return
 				}
+			case "nextSong":
+				if mb.Player != nil {
+					mb.NextSong = true
+					return
+				}
+				return
 			default:
 				return
 			}
@@ -153,6 +158,11 @@ func (mb *MarlinBox) GetCurrentCard() {
 	}
 	for _, c := range mb.Playlist {
 		if mb.CurrentID == c.ID {
+			if mb.CurrentPlayCard != nil {
+				if mb.CurrentID == mb.CurrentPlayCard.ID {
+					return
+				}
+			}
 			mb.CurrentPlayCard = c
 			if mb.PlayerContext != nil {
 				mb.Player.Reset()
@@ -185,44 +195,57 @@ func (mb *MarlinBox) GetCurrentCard() {
 
 func (mb *MarlinBox) Play() {
 	go func() {
-		var err error
 		var ready chan struct{}
 		playingID := mb.CurrentPlayCard.ID
-		f, err := os.Open(mb.CurrentPlayCard.File)
-		if err != nil {
-			log.Println(err)
-			return
-		}
-		defer f.Close()
 
-		d, err := mp3.NewDecoder(f)
-		if err != nil {
-			log.Println(err)
-			return
-		}
-
-		mb.PlayerContext, ready, err = oto.NewContext(d.SampleRate(), 2, 2)
-		if err != nil {
-			log.Println(err)
-			return
-		}
-		<-ready
-
-		mb.Player = mb.PlayerContext.NewPlayer(d)
-		defer mb.Player.Close()
-		mb.Player.SetVolume(mb.Volume)
-		mb.Player.Play()
-
-		for {
-			if mb.CurrentPlayCard.ID != playingID {
-				break
+		for _, file := range mb.CurrentPlayCard.File {
+			if playingID != mb.CurrentPlayCard.ID {
+				return
 			}
-			if mb.Volume != mb.Player.Volume() {
-				mb.Player.SetVolume(mb.Volume)
+			f, err := os.Open(file)
+			if err != nil {
+				log.Println(err)
+				return
 			}
-			time.Sleep(time.Second)
-			if !mb.Player.IsPlaying() {
-				break
+			defer f.Close()
+
+			d, err := mp3.NewDecoder(f)
+			if err != nil {
+				log.Println(err)
+				return
+			}
+
+			mb.PlayerContext, ready, err = oto.NewContext(d.SampleRate(), 2, 2)
+			if err != nil {
+				log.Println(err)
+				return
+			}
+			<-ready
+
+			mb.Player = mb.PlayerContext.NewPlayer(d)
+			defer mb.Player.Close()
+			mb.Player.SetVolume(mb.Volume)
+			mb.Player.Play()
+
+			for {
+				if mb.CurrentPlayCard.ID != playingID {
+					break
+				}
+
+				if mb.NextSong {
+					mb.Player.Pause()
+					mb.Player.Close()
+					mb.NextSong = false
+					break
+				}
+
+				if mb.Volume != mb.Player.Volume() {
+					mb.Player.SetVolume(mb.Volume)
+				}
+				time.Sleep(time.Second)
+				if !mb.Player.IsPlaying() {
+					break
+				}
 			}
 		}
 	}()

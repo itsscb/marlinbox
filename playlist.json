@@ -5,57 +5,197 @@
  "playlist": [
   {
    "id": "0004106397",
-   "file": "./music/01-01-Traditional-Der_Mond_ist_aufgegangen-320.mp3"
+   "file": [
+    "./music/01-01-Traditional-Der_Mond_ist_aufgegangen-320.mp3"
+   ]
   },
   {
    "id": "0017411992",
-   "file": "./music/01-02-Heino_Gaze-La-Le-Lu-320.mp3"
+   "file": [
+    "./music/01-02-Heino_Gaze-La-Le-Lu-320.mp3"
+   ]
   },
   {
    "id": "0017356608",
-   "file": "./music/01-01-Chris_Buseck-Party_im_Schneckenhaus-320.mp3"
-},
-{
-    "id": "0004148198",
-    "file": "./music/01-01-Heiko_Russe-Leo_Lausemaus_Titelsong-320.mp3"
-},
-{
-    "id": "0008323849",
-    "file": "./music/01-05-Markus_Schurjann-Ich_bin_ein_Einhorn-320.mp3"
+   "file": [
+    "./music/01-01-Chris_Buseck-Party_im_Schneckenhaus-320.mp3"
+   ]
+  },
+  {
+   "id": "0004148198",
+   "file": [
+    "./music/01-01-Heiko_Russe-Leo_Lausemaus_Titelsong-320.mp3"
+   ]
+  },
+  {
+   "id": "0008323849",
+   "file": [
+    "./music/01-05-Markus_Schurjann-Ich_bin_ein_Einhorn-320.mp3"
+   ]
   },
   {
    "id": "0004152218",
-   "file": "./music/01-06-Traditional-Die_Rader_vom_Bus-320.mp3"
+   "file": [
+    "./music/01-06-Traditional-Die_Rader_vom_Bus-320.mp3"
+   ]
   },
   {
    "id": "0012528320",
-   "file": "./music/01-06-Traditional-Schlaf_Kindlein_schlaf-320.mp3"
+   "file": [
+    "./music/01-06-Traditional-Schlaf_Kindlein_schlaf-320.mp3"
+   ]
   },
   {
    "id": "0008324420",
-   "file": "./music/01-07-Georges_Moustaki-Das_rote_Pferd-320.mp3"
+   "file": [
+    "./music/01-07-Georges_Moustaki-Das_rote_Pferd-320.mp3"
+   ]
   },
   {
    "id": "0008324422",
-   "file": "./music/01-09-Markus_Schurjann-Wer_hat_den_Keks_aus_der_Dose_geklaut-320.mp3"
+   "file": [
+    "./music/01-09-Markus_Schurjann-Wer_hat_den_Keks_aus_der_Dose_geklaut-320.mp3"
+   ]
   },
   {
    "id": "0008324475",
-   "file": "./music/01-10-Traditional-Funf_kleine_Fische-320.mp3"
+   "file": [
+    "./music/01-10-Traditional-Funf_kleine_Fische-320.mp3"
+   ]
   },
   {
    "id": "0005409503",
-   "file": "./music/01-11-Traditional-Old_Mac_Donald_Had_a_Farm-320.mp3"
+   "file": [
+    "./music/01-11-Traditional-Old_Mac_Donald_Had_a_Farm-320.mp3"
+   ]
   },
   {
    "id": "0004148375",
-   "file": "./music/01-14-Traditional-Meine_Oma_fahrt_im_Huhnerstall_Motorrad-320.mp3"
+   "file": [
+    "./music/01-14-Traditional-Meine_Oma_fahrt_im_Huhnerstall_Motorrad-320.mp3"
+   ]
+  },
+  {
+   "id": "0004120064",
+   "file": [
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-01-Arne_Gedigk-Hier_kommt_Conni_Titelsong-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-02-Simone_Sommerland-Bibi_und_Tina_Lied-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-03-Christian_Bruhn-Wickie-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-04-Simone_Sommerland-Komm_und_flieg_mit_mir_Mia_and_Me-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-05-Simone_Sommerland-Leo_Lausemaus_Titelsong-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-06-Simone_Sommerland-Die_Welt_ist_elefantastisch-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-07-William_Hanna-Kommt_mit_ins_Schlumpfenland-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-08-Udo_Schobel-Kikaninchen-Titellied-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-09-Jan_Johansson-Hey_Pippi_Langstrumpf-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-10-Gil_Slavin-Yakari_Titelsong-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-11-Simone_Sommerland-Yo_wir_schaffen_das-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-12-Simone_Sommerland-Benjamin_Blumchen_Lied-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-13-Alf_Klimek-Lauras_Stern_Titelsong-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-14-Karel_Svoboda-Die_Biene_Maja-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-15-Heinz_Rudolf_Kunze-Little_Amadeus-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-16-Felix_Janosa-Ritter_Rost_Lied-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-17-Simone_Sommerland-Kleiner_roter_Traktor-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-18-Mark_Thomas-Shaun_das_Schaf-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-19-Achim_Gieseler-Pim_Pam_Pom-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-20-Iris_Gruttmann-Briefe_von_Felix-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-21-Stephen_Hillenburg-Spongebob_Titelsong-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-22-Ingfried_Hoffmann-Der_die_das_Wissen-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-23-Udo_Jurgens-Vielen_Dank_fur_die_Blumen-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-24-Christian_Bruhn-Heidi-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-25-Christian_Bruhn-Sindbad_Titellied-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-26-Simone_Sommerland-Bibi_Blocksberg_Lied-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-27-Christian_Bruhn-Alice_im_Wunderland-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-28-Simone_Sommerland-Caillou_Intro-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-29-Judy_Weiss-Prinzessin_Lillifee_TV-Serie_Titelsong-320.mp3",
+    "./music/Simone_Sommerland_Karsten_Gluck_die_Kita-Frosche-Die_30_besten_TV-Serienlieder_fur_Kinder/01-30-Wolfgang_Richter-Sandmann_lieber_Sandmann-320.mp3"
+   ]
+  },
+  {
+   "id": "0012914304",
+   "file": [
+    "./music/In_Flames-Sounds_Of_A_Playground_Fading/01-01-Anders_Friden-Sounds_of_a_Playground_Fading-320.mp3",
+    "./music/In_Flames-Sounds_Of_A_Playground_Fading/01-02-Anders_Friden-Deliver_Us-320.mp3",
+    "./music/In_Flames-Sounds_Of_A_Playground_Fading/01-03-Anders_Friden-All_For_Me-320.mp3",
+    "./music/In_Flames-Sounds_Of_A_Playground_Fading/01-04-Anders_Friden-The_Puzzle-320.mp3",
+    "./music/In_Flames-Sounds_Of_A_Playground_Fading/01-05-Anders_Friden-Fear_is_the_Weakness-320.mp3",
+    "./music/In_Flames-Sounds_Of_A_Playground_Fading/01-06-Anders_Friden-Where_the_Dead_Ships_Dwell-320.mp3",
+    "./music/In_Flames-Sounds_Of_A_Playground_Fading/01-07-Anders_Friden-The_Attic-320.mp3",
+    "./music/In_Flames-Sounds_Of_A_Playground_Fading/01-08-Anders_Friden-Darker_Times-320.mp3",
+    "./music/In_Flames-Sounds_Of_A_Playground_Fading/01-09-Anders_Friden-Ropes-320.mp3",
+    "./music/In_Flames-Sounds_Of_A_Playground_Fading/01-10-Anders_Friden-Enter_Tragedy-320.mp3",
+    "./music/In_Flames-Sounds_Of_A_Playground_Fading/01-11-Anders_Friden-Jester_s_Door-320.mp3",
+    "./music/In_Flames-Sounds_Of_A_Playground_Fading/01-12-Anders_Friden-A_New_Dawn-320.mp3",
+    "./music/In_Flames-Sounds_Of_A_Playground_Fading/01-13-Anders_Friden-Liberation-320.mp3"
+   ]
+  },
+  {
+   "id": "0012859161",
+   "file": [
+    "./music/In_Flames-Reroute_to_Remain/01-01-Anders_Friden-Reroute_to_Remain-320.mp3",
+    "./music/In_Flames-Reroute_to_Remain/01-02-Anders_Friden-System-320.mp3",
+    "./music/In_Flames-Reroute_to_Remain/01-03-Anders_Friden-Drifter-320.mp3",
+    "./music/In_Flames-Reroute_to_Remain/01-04-Anders_Friden-Trigger-320.mp3",
+    "./music/In_Flames-Reroute_to_Remain/01-05-Anders_Friden-Cloud_Connected-320.mp3",
+    "./music/In_Flames-Reroute_to_Remain/01-06-Anders_Friden-Transparent-320.mp3",
+    "./music/In_Flames-Reroute_to_Remain/01-07-Anders_Friden-Dawn_of_a_New_Day-320.mp3",
+    "./music/In_Flames-Reroute_to_Remain/01-08-Anders_Friden-Egonomic-320.mp3",
+    "./music/In_Flames-Reroute_to_Remain/01-09-Anders_Friden-Minus-320.mp3",
+    "./music/In_Flames-Reroute_to_Remain/01-10-Anders_Friden-Dismiss_the_Cynics-320.mp3",
+    "./music/In_Flames-Reroute_to_Remain/01-11-Anders_Friden-Free_Fall-320.mp3",
+    "./music/In_Flames-Reroute_to_Remain/01-12-Anders_Friden-Dark_Signs-320.mp3",
+    "./music/In_Flames-Reroute_to_Remain/01-13-Anders_Friden-Metaphor-320.mp3",
+    "./music/In_Flames-Reroute_to_Remain/01-14-Anders_Friden-Black_White-320.mp3"
+   ]
+  },
+  {
+   "id": "0012901666",
+   "file": [
+    "./music/In_Flames-Come_Clarity/01-12-In_Flames-Strong_and_Smart-320.mp3",
+    "./music/In_Flames-Come_Clarity/01-13-In_Flames-World_of_Promises-320.mp3",
+    "./music/In_Flames-Come_Clarity/01-01-Anders_Friden-Take_This_Life-320.mp3",
+    "./music/In_Flames-Come_Clarity/01-02-Anders_Friden-Leeches-320.mp3",
+    "./music/In_Flames-Come_Clarity/01-03-Anders_Friden-Reflect_the_Storm-320.mp3",
+    "./music/In_Flames-Come_Clarity/01-04-Anders_Friden-Dead_End-320.mp3",
+    "./music/In_Flames-Come_Clarity/01-05-Anders_Friden-Scream-320.mp3",
+    "./music/In_Flames-Come_Clarity/01-06-Anders_Friden-Come_Clarity-320.mp3",
+    "./music/In_Flames-Come_Clarity/01-07-Anders_Friden-Vacuum-320.mp3",
+    "./music/In_Flames-Come_Clarity/01-08-Anders_Friden-Pacing_Death_s_Trail-320.mp3",
+    "./music/In_Flames-Come_Clarity/01-09-Anders_Friden-Crawling_Through_Knives-320.mp3",
+    "./music/In_Flames-Come_Clarity/01-10-Anders_Friden-Versus_Terminus-320.mp3",
+    "./music/In_Flames-Come_Clarity/01-11-Anders_Friden-Our_Infinite_Struggle-320.mp3",
+    "./music/In_Flames-Come_Clarity/01-12-Anders_Friden-Vanishing_Light-320.mp3",
+    "./music/In_Flames-Come_Clarity/01-13-Anders_Friden-Your_Bedtime_Story_Is_Scaring_Everyone-320.mp3",
+    "./music/In_Flames-Come_Clarity/01-01-Anders_Friden-Reroute_to_Remain-320.mp3",
+    "./music/In_Flames-Come_Clarity/01-02-Anders_Friden-System-320.mp3"
+   ]
+  },
+  {
+   "id": "0012962469",
+   "file": [
+    "./music/In_Flames-Clayman/01-01-Anders_Friden-Bullet_Ride-320.mp3",
+    "./music/In_Flames-Clayman/01-02-Anders_Friden-Pinball_Map-320.mp3",
+    "./music/In_Flames-Clayman/01-03-Anders_Friden-Only_for_the_Weak-320.mp3",
+    "./music/In_Flames-Clayman/01-04-Anders_Friden-As_the_Future_Repeats_Today-320.mp3",
+    "./music/In_Flames-Clayman/01-05-Anders_Friden-Square_Nothing-320.mp3",
+    "./music/In_Flames-Clayman/01-06-Anders_Friden-Clayman-320.mp3",
+    "./music/In_Flames-Clayman/01-07-Anders_Friden-Satellites_and_Astronauts-320.mp3",
+    "./music/In_Flames-Clayman/01-08-Anders_Friden-Brush_the_Dust_Away-320.mp3",
+    "./music/In_Flames-Clayman/01-09-Anders_Friden-Swim-320.mp3",
+    "./music/In_Flames-Clayman/01-10-Anders_Friden-Suburban_Me-320.mp3",
+    "./music/In_Flames-Clayman/01-11-Anders_Friden-Another_Day_in_Quicksand-320.mp3",
+    "./music/In_Flames-Clayman/01-12-In_Flames-Strong_and_Smart-320.mp3",
+    "./music/In_Flames-Clayman/01-13-In_Flames-World_of_Promises-320.mp3"
+   ]
   }
  ],
- "controlcards": [
-  {
-   "id": "0017458863",
+ "controlcards": [  
+{
+   "id": "0012613563",
    "function": "vol+"
+  },
+{
+   "id": "0017458863",
+   "function": "nextSong"
   },
   {
    "id": "0017356401",
