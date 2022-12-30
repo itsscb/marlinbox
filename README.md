@@ -36,7 +36,8 @@ If you wish to try the **MARLIN** Box in this state you will need the following:
 - Build the software `~/go/bin/go build main.go && mv cmd marlinbox`
 - Create or modify the file `playlist.json` in the same directory
 - Create the `systemd service` with `sudo nano /etc/systemd/system/marlinbox.service`
-  - `[Unit]
+```
+[Unit]
 Description=Runs the binary of the marlinbox
 
 [Service]
@@ -44,7 +45,8 @@ ExecStart=/home/marlinbox/marlinbox/cmd/cmd
 WorkingDirectory=/home/marlinbox/marlinbox/cmd
 Type=simple
 User=root
-`
+```
+**IMPORTANT**: *Update the path of `ExecStart` and `WorkingDirectory` according to your setup.*
 - Enable the `systemd service` with `sudo systemctl enable marlinbox.service`
 - Restart the Pi with `sudo reboot now`
 
