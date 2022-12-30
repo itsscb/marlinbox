@@ -18,6 +18,7 @@ type MarlinBox struct {
 	CurrentID       string             `json:"-"`
 	Volume          float64            `json:"-"`
 	NextSong        bool               `json:"-"`
+	Stop            bool               `json:"-"`
 	Playlist        []*PlayCard        `json:"playlist,omitempty"`
 	ControlCards    []*ControlCard     `json:"controlcards,omitempty"`
 	Device          *evdev.InputDevice `json:"-"`
@@ -135,6 +136,11 @@ func (mb *MarlinBox) GetCurrentCard() {
 	for _, c := range mb.ControlCards {
 		if mb.CurrentID == c.ID {
 			switch c.Function {
+			case "stop":
+				if mb.Player != nil && mb.Player.IsPlaying() {
+					mb.Stop = true
+				}
+				return
 			case "vol+":
 				if mb.Volume < 1.0 {
 					mb.Volume = mb.Volume + 0.2
@@ -196,12 +202,20 @@ func (mb *MarlinBox) GetCurrentCard() {
 func (mb *MarlinBox) Play() {
 	go func() {
 		var ready chan struct{}
+		if mb.CurrentPlayCard == nil {
+			return
+		}
 		playingID := mb.CurrentPlayCard.ID
 
 		for _, file := range mb.CurrentPlayCard.File {
-			if playingID != mb.CurrentPlayCard.ID {
+			if mb.Stop {
+				break
+			}
+
+			if mb.CurrentPlayCard == nil || playingID != mb.CurrentPlayCard.ID {
 				return
 			}
+
 			f, err := os.Open(file)
 			if err != nil {
 				log.Println(err)
@@ -228,13 +242,14 @@ func (mb *MarlinBox) Play() {
 			mb.Player.Play()
 
 			for {
-				if mb.CurrentPlayCard.ID != playingID {
+				if mb.Stop {
+					break
+				}
+				if mb.CurrentPlayCard != nil && mb.CurrentPlayCard.ID != playingID {
 					break
 				}
 
 				if mb.NextSong {
-					mb.Player.Pause()
-					mb.Player.Close()
 					mb.NextSong = false
 					break
 				}
@@ -247,11 +262,12 @@ func (mb *MarlinBox) Play() {
 					break
 				}
 			}
+			mb.Player.Pause()
+			mb.Player.Close()
+			mb.PlayerContext.Suspend()
 		}
+		mb.Stop = false
 		mb.CurrentPlayCard = nil
-		mb.Player.Pause()
-		mb.Player.Close()
-		mb.PlayerContext.Suspend()
 	}()
 
 }
