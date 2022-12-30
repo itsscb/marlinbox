@@ -165,7 +165,7 @@ func (mb *MarlinBox) GetCurrentCard() {
 			}
 			mb.CurrentPlayCard = c
 			if mb.PlayerContext != nil {
-				mb.Player.Reset()
+				mb.Player.Pause()
 			}
 			mb.Play()
 			return
