@@ -248,6 +248,10 @@ func (mb *MarlinBox) Play() {
 				}
 			}
 		}
+		mb.CurrentPlayCard = nil
+		mb.Player.Pause()
+		mb.Player.Close()
+		mb.PlayerContext.Suspend()
 	}()
 
 }
